@@ -1,0 +1,15 @@
+C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle1\obj\Debug\net6.0\Puzzle1.csproj.AssemblyReference.cache
+C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle1\obj\Debug\net6.0\Puzzle1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle1\obj\Debug\net6.0\Puzzle1.AssemblyInfoInputs.cache
+C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle1\obj\Debug\net6.0\Puzzle1.AssemblyInfo.cs
+C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle1\obj\Debug\net6.0\Puzzle1.csproj.CoreCompileInputs.cache
+C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle1\bin\Debug\net6.0\Puzzle1.exe
+C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle1\bin\Debug\net6.0\Puzzle1.deps.json
+C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle1\bin\Debug\net6.0\Puzzle1.runtimeconfig.json
+C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle1\bin\Debug\net6.0\Puzzle1.dll
+C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle1\bin\Debug\net6.0\ref\Puzzle1.dll
+C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle1\bin\Debug\net6.0\Puzzle1.pdb
+C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle1\obj\Debug\net6.0\Puzzle1.dll
+C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle1\obj\Debug\net6.0\ref\Puzzle1.dll
+C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle1\obj\Debug\net6.0\Puzzle1.pdb
+C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle1\obj\Debug\net6.0\Puzzle1.genruntimeconfig.cache
