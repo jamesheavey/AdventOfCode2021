@@ -3,14 +3,8 @@
     public class Program
     {
         const string FilePath = @"C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle2\Puzzle2Input.txt";
+
         private static void Main()
-        {
-            Part1();
-
-            Part2();
-        }
-
-        private static void Part1()
         {
             var lines = File.ReadAllLines(FilePath);
 
@@ -24,9 +18,16 @@
                 magnitudes.Add(Convert.ToInt32(split[1]));
             }
 
+            Part1(instructions, magnitudes);
+
+            Part2(instructions, magnitudes);
+        }
+
+        private static void Part1(List<string> instructions, List<int> magnitudes)
+        {
             var submarine = new Submarine(0,0,0);
 
-            for (int i = 0; i < lines.Count(); i++)
+            for (int i = 0; i < instructions.Count(); i++)
             {
                 switch (instructions[i])
                 {
@@ -52,23 +53,11 @@
                 $"The Answer is: {submarine.X*submarine.Y}");
         }
 
-        public static void Part2()
+        public static void Part2(List<string> instructions, List<int> magnitudes)
         {
-            var lines = File.ReadAllLines(FilePath);
-
-            var instructions = new List<string>();
-            var magnitudes = new List<int>();
-
-            foreach (var line in lines)
-            {
-                var split = line.Split(' ');
-                instructions.Add(split[0]);
-                magnitudes.Add(Convert.ToInt32(split[1]));
-            }
-
             var submarine = new Submarine(0, 0, 0);
 
-            for (int i = 0; i < lines.Count(); i++)
+            for (int i = 0; i < instructions.Count(); i++)
             {
                 switch (instructions[i])
                 {
