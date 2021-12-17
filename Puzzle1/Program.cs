@@ -1,19 +1,18 @@
-﻿using System;
-
-namespace Puzzle1
+﻿namespace Puzzle1
 {
     public class Program
     {
+        const string FilePath = @"C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle1\Puzzle1Input.txt";
         private static void Main()
         {
-            // Part1();
+            Part1();
 
             Part2();
         }
 
         private static void Part1()
         {
-            var lines = File.ReadAllLines(@"C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle1\Puzzle1Input.txt")
+            var lines = File.ReadAllLines(FilePath)
                 .Select(t => Convert.ToInt32(t)).ToList();
 
             var depthIncrease = 0;
@@ -26,12 +25,12 @@ namespace Puzzle1
                 }
             }
 
-            Console.WriteLine($"The depth increased {depthIncrease} times");
+            Console.WriteLine($"PART 1 - The depth increased {depthIncrease} times");
         }
 
         public static void Part2()
         {
-            var lines = File.ReadAllLines(@"C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle1\Puzzle1Input.txt")
+            var lines = File.ReadAllLines(FilePath)
                 .Select(t => Convert.ToInt32(t)).ToList();
 
             var depthIncrease = 0;
@@ -45,7 +44,7 @@ namespace Puzzle1
                 }
             }
 
-            Console.WriteLine($"The depth increased {depthIncrease} times");
+            Console.WriteLine($"PART 2 - The depth increased {depthIncrease} times");
         }
     }
 }
