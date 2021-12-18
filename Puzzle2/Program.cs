@@ -2,48 +2,38 @@
 {
     public class Program
     {
-        const string FilePath = @"C:\Users\james.heavey\source\repos\AdventOfCode2021\Puzzle2\Puzzle2Input.txt";
+        const string FileName = "Puzzle2Input.txt";
+        static string FilePath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\..\\");
+
+        static List<(string inst, int mag)> commands;
 
         private static void Main()
         {
-            var lines = File.ReadAllLines(FilePath);
+            commands = File.ReadAllLines(@$"{FilePath}\{FileName}")
+                .Select(l => l.Split())
+                .Select(x => (x[0], Convert.ToInt32(x[1])))
+                .ToList();
 
-            var instructions = new List<string>();
-            var magnitudes = new List<int>();
+            Part1();
 
-            foreach (var line in lines)
-            {
-                var split = line.Split(' ');
-                instructions.Add(split[0]);
-                magnitudes.Add(Convert.ToInt32(split[1]));
-            }
-
-            Part1(instructions, magnitudes);
-
-            Part2(instructions, magnitudes);
+            Part2();
         }
 
-        private static void Part1(List<string> instructions, List<int> magnitudes)
+        private static void Part1()
         {
             var submarine = new Submarine(0,0,0);
 
-            for (int i = 0; i < instructions.Count(); i++)
+            foreach (var (inst, mag) in commands)
             {
-                switch (instructions[i])
+                switch (inst)
                 {
-                    case "forward":
-                        submarine.X = submarine.X + magnitudes[i];
+                    case "forward": submarine.X += mag;
                         break;
 
-                    case "up":
-                        submarine.Y = submarine.Y - magnitudes[i];
+                    case "up": submarine.Y -= mag;
                         break;
 
-                    case "down":
-                        submarine.Y = submarine.Y + magnitudes[i];
-                        break;
-
-                    default:
+                    case "down": submarine.Y += mag;
                         break;
                 }
             }
@@ -53,28 +43,23 @@
                 $"The Answer is: {submarine.X*submarine.Y}");
         }
 
-        public static void Part2(List<string> instructions, List<int> magnitudes)
+        public static void Part2()
         {
             var submarine = new Submarine(0, 0, 0);
 
-            for (int i = 0; i < instructions.Count(); i++)
+            foreach (var (inst, mag) in commands)
             {
-                switch (instructions[i])
+                switch (inst)
                 {
                     case "forward":
-                        submarine.X = submarine.X + magnitudes[i];
-                        submarine.Y = submarine.Y + (magnitudes[i] * submarine.AIM);
+                        submarine.X += mag;
+                        submarine.Y += (mag * submarine.AIM);
                         break;
 
-                    case "up":
-                        submarine.AIM = submarine.AIM - magnitudes[i];
+                    case "up": submarine.AIM -= mag;
                         break;
 
-                    case "down":
-                        submarine.AIM = submarine.AIM + magnitudes[i];
-                        break;
-
-                    default:
+                    case "down": submarine.AIM += mag;
                         break;
                 }
             }
