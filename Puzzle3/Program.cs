@@ -19,24 +19,14 @@
 
         private static void Part1()
         {
-            var counts = new int[binaries[0].Length];
-
-            foreach (var bin in binaries)
-            {
-                for (var i = 0; i < bin.Length; i++)
-                {
-                    counts[i] += bin[i] == '1' ? 1 : 0;
-                }
-            }
-
             var readings = new string[2];
 
-            foreach (var digit in counts)
+            for (var i = 0; i < binaries[0].Length; i++)
             {
-                Console.WriteLine(digit);
-                readings[0] += digit >= binaries.Count / 2 ? "1" : "0";
-                readings[1] += digit <= binaries.Count / 2 ? "1" : "0";
+                readings[0] += binaries.Count(c => c[i] == '1') >= binaries.Count(c => c[i] == '0') ? '1' : '0';
+                readings[1] += binaries.Count(c => c[i] == '1') >= binaries.Count(c => c[i] == '0') ? '0' : '1';
             }
+
             Console.WriteLine(binaries.Count);
 
             Console.WriteLine($"PART 1 - \nThe gamma is: {readings[0]}\n" +
