@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Puzzle1",
+    "\\Puzzle2",
+    "\\Puzzle3"
   ],
+  "SelectedNode": "\\Puzzle3\\Puzzle3.sln",
   "PreviewInSolutionExplorer": false
 }
