@@ -49,25 +49,13 @@
             var CO2 = new List<string>(binaries);
             var O2 = new List<string>(binaries);
 
-            for (var i = 0; i < CO2[0].Length; i++)
+            for (var i = 0; i < binaries[0].Length; i++)
             {
-                Console.WriteLine($"CO2: {CO2.Count}, O2: {O2.Count}");
+                var CO2commonVal = CO2.Count(c => c[i] == '1') >= CO2.Count(c => c[i] == '0') ? '1' : '0';
+                var O2commonVal = O2.Count(c => c[i] == '1') >= O2.Count(c => c[i] == '0') ? '0' : '1';
 
-                if (CO2.Count == 1) { }
-                else
-                {
-                    var commonVal = CO2.Count(c => c[i] == '1') >= CO2.Count(c => c[i] == '0') ? '1' : '0';
-
-                    CO2.RemoveAll(x => x[i] == commonVal);
-                }
-
-                if (O2.Count == 1) { }
-                else
-                {
-                    var commonVal = O2.Count(c => c[i] == '1') >= O2.Count(c => c[i] == '0') ? '0' : '1';
-
-                    O2.RemoveAll(x => x[i] == commonVal);
-                }
+                if (CO2.Count > 1) CO2.RemoveAll(x => x[i] == CO2commonVal);
+                if (CO2.Count > 1) O2.RemoveAll(x => x[i] == O2commonVal);
             }
 
             Console.WriteLine($"PART 2 - \nThe O2 is: {CO2[0]}\n" +
